@@ -65,3 +65,13 @@ def move(request):
 def say(request):
     # IMPLEMENT
     return JsonResponse({'error':"Not yet implemented"}, safe=True, status=500)
+
+
+@csrf_exempt
+@api_view(["GET"])
+def rooms(request):
+    get_rooms = Room.objects.all()
+    rooms_list = []
+    for room in get_rooms.values():
+        rooms_list.append(room)
+    return JsonResponse({"rooms": rooms_list}, safe=True)
