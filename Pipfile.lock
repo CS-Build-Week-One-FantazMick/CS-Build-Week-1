@@ -1,11 +1,7 @@
 {
     "_meta": {
         "hash": {
-<<<<<<< HEAD
-            "sha256": "17eec468e6a7c37ebaa90ee50ec1526436a31077100081d693f9e6ca24a8c031"
-=======
             "sha256": "927a0c3a726f495ee9af073094785a88a3a9a33b142154ea24d021edfe15aa48"
->>>>>>> ab8c9209fcf2b21fbad41479077bbc6d9a23257a
         },
         "pipfile-spec": 6,
         "requires": {
@@ -121,19 +117,11 @@
         },
         "django": {
             "hashes": [
-<<<<<<< HEAD
-                "sha256:4f2c913303be4f874015993420bf0bd8fd2097a9c88e6b49c6a92f9bdd3fb13a",
-                "sha256:8c3575f81e11390893860d97e1e0154c47512f180ea55bd84ce8fa69ba8051ca"
-            ],
-            "index": "pypi",
-            "version": "==3.0.2"
-=======
                 "sha256:315b11ea265dd15348d47f2cbb044ef71da2018f6e582fed875c889758e6f844",
                 "sha256:b61295749be7e1c42467c55bcabdaee9fbe9496fdf9ed2e22cef44d9de2ff953"
             ],
             "index": "pypi",
             "version": "==3.0.1"
->>>>>>> ab8c9209fcf2b21fbad41479077bbc6d9a23257a
         },
         "django-allauth": {
             "hashes": [
@@ -144,19 +132,11 @@
         },
         "django-cors-headers": {
             "hashes": [
-<<<<<<< HEAD
-                "sha256:a5960addecc04527ab26617e51b8ed42f0adab4594b24bb0f3c33e2bd3857c3f",
-                "sha256:a785b5f446f6635810776d9f5f5d23e6a2a2f728ea982648370afaf0dfdf2627"
-            ],
-            "index": "pypi",
-            "version": "==3.2.1"
-=======
                 "sha256:84933651fbbde8f2bc084bef2f077b79db1ec1389432f21dd661eaae6b3d6a95",
                 "sha256:a8b2772582e8025412f4d4b54b617d8b707076ffd53a2b961bd24f10ec207a7c"
             ],
             "index": "pypi",
             "version": "==3.2.0"
->>>>>>> ab8c9209fcf2b21fbad41479077bbc6d9a23257a
         },
         "django-heroku": {
             "hashes": [
@@ -237,8 +217,6 @@
             ],
             "version": "==2.8.4"
         },
-<<<<<<< HEAD
-=======
         "psycopg2-binary": {
             "hashes": [
                 "sha256:040234f8a4a8dfd692662a8308d78f63f31a97e1c42d2480e5e6810c48966a29",
@@ -277,7 +255,6 @@
             "index": "pypi",
             "version": "==2.8.4"
         },
->>>>>>> ab8c9209fcf2b21fbad41479077bbc6d9a23257a
         "pusher": {
             "hashes": [
                 "sha256:668df72fcf61f293313e29a29acd41cce233a45d445a97a9b21dd32ad09a2d17",
@@ -396,9 +373,6 @@
             "version": "==5.0.1"
         }
     },
-<<<<<<< HEAD
-    "develop": {}
-=======
     "develop": {
         "astroid": {
             "hashes": [
@@ -495,5 +469,4 @@
             "version": "==1.11.2"
         }
     }
->>>>>>> ab8c9209fcf2b21fbad41479077bbc6d9a23257a
 }
