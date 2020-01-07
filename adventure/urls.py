@@ -7,4 +7,5 @@ urlpatterns = [
     url('say', api.say),
     url('getroom', api.getroom),
     url('getallrooms', api.getallrooms),
+    # url('make_grid', api.make_grid),
 ]
