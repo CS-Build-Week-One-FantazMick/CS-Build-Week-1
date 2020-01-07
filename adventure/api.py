@@ -8,14 +8,14 @@ from .models import *
 from rest_framework.decorators import api_view
 import json
 
-from util.sample_generator import World
+# from util.sample_generator import World
 
-w = World()
-num_rooms = 100
-width = 10
-height = 10
-w.generate_rooms(width, height, num_rooms)
-w.print_rooms()
+# w = World()
+# num_rooms = 100
+# width = 10
+# height = 10
+# w.generate_rooms(width, height, num_rooms)
+# w.print_rooms()
 
 # instantiate pusher
 pusher = Pusher(app_id=config('PUSHER_APP_ID'), key=config('PUSHER_KEY'), secret=config('PUSHER_SECRET'), cluster=config('PUSHER_CLUSTER'))
