@@ -1,3 +1,7 @@
+# import os
+# import sys
+# file_dir = os.path.dirname(__file__)
+# sys.path.append(file_dir)
 import random
 from adventure.models import Player, Room
 Room.objects.all().delete()
@@ -68,11 +72,11 @@ class World:
                 room_direction = "n"
                 horizontalDirection = 1
                 direction *= -1
-            currName = random.choice(roomAdj) + " " + random.choice(roomNames)
+            currentName = random.choice(roomAdj) + " " + random.choice(roomNames)
             roomDescription = random.choice(
-                descriptionBeginnings) + " " + currName.lower() + ". " + random.choice(descriptionInfo)
+                descriptionBeginnings) + " " + currentName.lower() + ". " + random.choice(descriptionInfo)
             # Create a room in the given direction
-            room = Room(title=currName,
+            room = Room(title=currentName,
                         description=roomDescription, x=x, y=y)
             # Note that in Django, you'll need to save the room after you create it
             # Save the room in the World grid
@@ -97,12 +101,12 @@ class World:
         return
 
 
-newWorld = World()
+w = World()
 num_rooms = 100
 width = 10
 height = 10
-newWorld.generate_rooms(width, height, num_rooms)
-print(newWorld.grid)
+w.generate_rooms(width, height, num_rooms)
+print(w.grid)
 players = Player.objects.all()
 for p in players:
     p.current_rooms = Room.objects.first()
