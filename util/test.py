@@ -1,21 +1,9 @@
-#! /usr/bin/env python
-# coding: utf-8
- 
-# generator-1.py, a simple python dungeon generator by
-# James Spencer <jamessp [at] gmail.com>.
 
-# To the extent possible under law, the person who associated CC0 with
-# pathfinder.py has waived all copyright and related or neighboring rights
-# to pathfinder.py.
-
-# You should have received a copy of the CC0 legalcode along with this
-# work. If not, see <http://creativecommons.org/publicdomain/zero/1.0/>.
- 
 from __future__ import print_function
 import random
  
-CHARACTER_TILES = {'stone': ' ',
-                   'floor': '.',
+CHARACTER_TILES = {'stone': '-',
+                   'floor': ' ',
                    'wall': '#'}
  
  
@@ -78,24 +66,24 @@ class Generator():
             # NOTE: Never randomly choose a join that will go out of bounds
             # when the walls are added.
             join = None
-            if join_type is 'either' and set([0, 1]).intersection(
+            if join_type == 'either' and set([0, 1]).intersection(
                  set([x1, x2, y1, y2])):
  
                 join = 'bottom'
-            elif join_type is 'either' and set([self.width - 1,
+            elif join_type == 'either' and set([self.width - 1,
                  self.width - 2]).intersection(set([x1, x2])) or set(
                  [self.height - 1, self.height - 2]).intersection(
                  set([y1, y2])):
  
                 join = 'top'
-            elif join_type is 'either':
+            elif join_type == 'either':
                 join = random.choice(['top', 'bottom'])
             else:
                 join = join_type
  
-            if join is 'top':
+            if join == 'top':
                 return [(x1, y1), (x1, y2), (x2, y2)]
-            elif join is 'bottom':
+            elif join == 'bottom':
                 return [(x1, y1), (x2, y1), (x2, y2)]
  
     def join_rooms(self, room_1, room_2, join_type='either'):
@@ -148,12 +136,12 @@ class Generator():
         # no overlap
         else:
             join = None
-            if join_type is 'either':
+            if join_type == 'either':
                 join = random.choice(['top', 'bottom'])
             else:
                 join = join_type
  
-            if join is 'top':
+            if join == 'top':
                 if y2 > y1:
                     jx1 = x1_2 + 1
                     jy1 = random.randint(y1, y1_2)
@@ -171,7 +159,7 @@ class Generator():
                         jx1, jy1, jx2, jy2, 'top')
                     self.corridor_list.append(corridors)
  
-            elif join is 'bottom':
+            elif join == 'bottom':
                 if y2 > y1:
                     jx1 = random.randint(x1, x1_2)
                     jy1 = y1_2 + 1
