@@ -530,7 +530,7 @@ r_room24.connectRooms(r_room23,'s')
 
 r_room24.connectRooms(r_room25,'n')
 r_room25.connectRooms(r_room24,'s')
-# ----------------------------------------
+
 r_room25.connectRooms(r_room26,'e')
 r_room26.connectRooms(r_room25,'w')
 
@@ -606,7 +606,6 @@ r_room49.connectRooms(r_room48,'w')
 r_room49.connectRooms(r_room50,'e')
 r_room50.connectRooms(r_room49,'w')
 
---------------------------------------------
 #south
 
 r_room50.connectRooms(r_room51,'s')
