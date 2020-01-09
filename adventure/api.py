@@ -8,6 +8,12 @@ from .models import *
 from rest_framework.decorators import api_view
 import json
 
+
+all_rooms = {}
+
+with open('adventure/static/rooms.json') as f:
+    all_rooms = json.load(f)
+
 # from util.sample_generator import World
 
 # w = World()
@@ -87,12 +93,14 @@ def say(request):
 @csrf_exempt
 @api_view(["GET"])
 def getallrooms(request):
-    print(request.body)
-    get_rooms = Room.objects.all()
-    rooms_list = []
-    for room in get_rooms.values():
-        rooms_list.append(room)
-    return JsonResponse({"rooms": rooms_list}, safe=True, status=200)
+    # print(request.body)
+    # get_rooms = Room.objects.all()
+    # rooms_list = []
+    # for room in get_rooms.values():
+    #     rooms_list.append(room)
+    # return JsonResponse({"rooms": rooms_list}, safe=True, status=200)
+
+    return JsonResponse({"rooms": all_rooms}, safe=True, status=200)
 
 @csrf_exempt
 @api_view(["GET"])
