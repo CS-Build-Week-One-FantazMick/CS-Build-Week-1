@@ -1,7 +1,3 @@
-# import os
-# import sys
-# file_dir = os.path.dirname(__file__)
-# sys.path.append(file_dir)
 import random
 from adventure.models import Player, Room
 Room.objects.all().delete()

@@ -109,8 +109,8 @@ def getroom(request):
 #     except:
 #         pass
 
-#     map = World(11,11)
-#     map.generate_rooms()
+#     map = World()
+#     map.generate_rooms(11, 11, 100)
 
 #     players=Player.objects.all()
 #     for p in players:
