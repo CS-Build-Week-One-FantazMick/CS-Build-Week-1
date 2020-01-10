@@ -66,6 +66,7 @@ def move(request):
         return JsonResponse({'name':player.user.username, 'title':nextRoom.title, 'position':[nextRoom.x, nextRoom.y],  'description':nextRoom.description, 'players':players, 'error_msg':""}, safe=True)
     else:
         players = room.playerNames(player_id)
+
         return JsonResponse({'name':player.user.username, 'title':room.title, 'description':room.description,  'players':players, 'error_msg':"You cannot move that way."}, safe=True)
 @csrf_exempt
 @api_view(["POST"])
