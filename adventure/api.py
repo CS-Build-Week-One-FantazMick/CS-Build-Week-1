@@ -17,6 +17,11 @@ import json
 # w.generate_rooms(width, height, num_rooms)
 # w.print_rooms()
 
+all_rooms = {}
+
+with open('adventure/static/rooms.json') as f:
+    all_rooms = json.load(f)    
+
 # instantiate pusher
 pusher = Pusher(app_id=config('PUSHER_APP_ID'), key=config('PUSHER_KEY'), secret=config('PUSHER_SECRET'), cluster=config('PUSHER_CLUSTER'))
 
@@ -89,10 +94,21 @@ def say(request):
 def getallrooms(request):
     print(request.body)
     get_rooms = Room.objects.all()
-    rooms_list = []
+
+    rooms = {}
+
     for room in get_rooms.values():
-        rooms_list.append(room)
-    return JsonResponse({"rooms": rooms_list}, safe=True, status=200)
+        id = str(room['id'])
+        xy = {"x": room['x'], "y": room['y']}
+        title = {"title": room['title']}
+        description = {"description": room['description']}
+        connections = {'n': room['n_to'], 'e': room['e_to'], 'w': room['w_to'], 's': room['s_to']}
+        connections = { k: v for k, v in connections.items() if v != 0}
+        
+        modified_room = [xy, connections, title, description, {"items": []}]
+        rooms[id] = modified_room
+        
+    return JsonResponse({"rooms": rooms}, safe=True, status=200)
 
 @csrf_exempt
 @api_view(["GET"])
