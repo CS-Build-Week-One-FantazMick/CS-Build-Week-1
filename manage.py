@@ -1,7 +1,17 @@
 #!/usr/bin/env python
 import os
 import sys
+import pusher
 
+pusher_client = pusher.Pusher(
+  app_id='928101',
+  key='3fa3a7d50134693becec',
+  secret='a1fcda37d211a856768b',
+  cluster='us2',
+  ssl=True
+)
+
+pusher_client.trigger('my-channel', 'my-event', {'message': 'hello world'})
 
 if __name__ == '__main__':
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'adv_project.settings')
